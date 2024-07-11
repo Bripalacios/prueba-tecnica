@@ -1,3 +1,5 @@
+"use client"; 
+
 import { BuscadorComponent } from "@/app/components/BuscadorComponent";
 import { ProductComponent } from "@/app/components/ProductComponent";
 import { NavbarComponent } from "./components/NavbarComponent";

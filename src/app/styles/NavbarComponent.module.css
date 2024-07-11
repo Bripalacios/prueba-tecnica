@@ -4,6 +4,11 @@
   justify-content: space-between;
   background-color: pink;
   padding: 10px 20px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }
 
 .menuIcon {
@@ -42,7 +47,30 @@
 }
 
 .searchIcon {
-  color: gray;
-  font-size: 18px;
   margin-left: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: gray; /* Cambia el color de la lupa a gris */
+  font-size: 18px;
+}
+
+.submenu {
+  position: absolute;
+  top: 50px;
+  left: 20px;
+  background-color: white;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 10px;
+  z-index: 1001;
+}
+
+.submenuItem {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.submenuItem:hover {
+  background-color: rgba(0, 0, 0, 0.1);
 }

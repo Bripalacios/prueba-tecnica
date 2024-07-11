@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import classNames from 'classnames';
 import Spinner from '../assets/Spinner';
-
+import Link from 'next/link';
 
 export const ProductComponent: React.FC = () => {
   const [characters, setCharacters] = useState<any[]>([]);
@@ -31,11 +31,10 @@ export const ProductComponent: React.FC = () => {
   if (error) return <p>{error}</p>;
 
   return (
-    <div className=" bg-gray-100 min-h-screen mt-10">
+    <div className="bg-gray-100 min-h-screen mt-10">
       <div className="max-w-7xl mx-auto">
         <header className="text-center mb-12">
           <p className="text-pink-600">Sitio por Bri</p>
- 
           <hr className="border-gray-300 mt-5" />
         </header>
         <h2 className="text-xl font-bold mb-8 text-center">Galería de Personajes</h2>
@@ -53,13 +52,11 @@ export const ProductComponent: React.FC = () => {
             >
               <h3 className="text-xl font-semibold mb-4 text-center">{character.name}</h3>
               <img src={character.image} alt={character.name} className="w-full h-auto rounded-lg mb-4" />
-              <a
-                href={`https://rickandmortyapi.com/api/character/${character.id}`}
-                className="text-blue-500 hover:text-blue-700 text-center block"
-                target="_blank" rel="noopener noreferrer"
-              >
-                Ver más
-              </a>
+              <Link href={`/Character/${character.id}`}>
+                <span className="text-blue-500 hover:text-blue-700 text-center block cursor-pointer">
+                  Ver más
+                </span>
+              </Link>
             </li>
           ))}
         </ul>
@@ -67,5 +64,3 @@ export const ProductComponent: React.FC = () => {
     </div>
   );
 };
-
-export default ProductComponent;
