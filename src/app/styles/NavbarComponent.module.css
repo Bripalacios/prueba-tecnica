@@ -1,0 +1,76 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: pink;
+  padding: 10px 20px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.menuIcon {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 4px 0;
+}
+
+.title {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.searchContainer {
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.searchInput {
+  border: none;
+  background: transparent;
+  outline: none;
+  color: white;
+  padding: 5px;
+}
+
+.searchIcon {
+  margin-left: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: gray; /* Cambia el color de la lupa a gris */
+  font-size: 18px;
+}
+
+.submenu {
+  position: absolute;
+  top: 50px;
+  left: 20px;
+  background-color: white;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 10px;
+  z-index: 1001;
+}
+
+.submenuItem {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.submenuItem:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
