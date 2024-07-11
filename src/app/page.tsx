@@ -1,13 +1,16 @@
 import { BuscadorComponent } from "@/app/components/BuscadorComponent";
 import { ProductComponent } from "@/app/components/ProductComponent";
+import { NavbarComponent } from "./components/NavbarComponent";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gray-100 flex flex-col items-center">
-      <h1 className="text-4xl font-bold text-gray-800 mb-6 mt-8">Rick and Morty</h1>
-      <BuscadorComponent />
-      <ProductComponent />
-    </main>
+    <>
+      <NavbarComponent />
+      <main className="min-h-screen bg-gray-100 flex flex-col items-center pt-20">
+        <h1 className="text-4xl font-bold text-gray-800 ">Rick and Morty</h1>
+        <ProductComponent />
+      </main>
+    </>
   );
 }

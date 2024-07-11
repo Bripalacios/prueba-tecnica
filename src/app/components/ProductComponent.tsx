@@ -31,12 +31,12 @@ export const ProductComponent: React.FC = () => {
   if (error) return <p>{error}</p>;
 
   return (
-    <div className="p-6 bg-gray-100 min-h-screen">
+    <div className=" bg-gray-100 min-h-screen mt-10">
       <div className="max-w-7xl mx-auto">
         <header className="text-center mb-12">
           <p className="text-pink-600">Sitio por Bri</p>
  
-          <hr className="border-gray-300 mt-4" />
+          <hr className="border-gray-300 mt-5" />
         </header>
         <h2 className="text-xl font-bold mb-8 text-center">Galería de Personajes</h2>
         <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
