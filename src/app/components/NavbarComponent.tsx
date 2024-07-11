@@ -1,9 +1,9 @@
-'use client'
+'use client';
 
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import styles from '../styles/NavbarComponent.module.css';
 import useStore from '../zustand/store';
+import styles from '../styles/NavbarComponent.module.css';
 
 export const NavbarComponent: React.FC = () => {
   const [showSubmenu, setShowSubmenu] = useState(false);

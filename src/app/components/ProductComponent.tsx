@@ -15,10 +15,18 @@ export const ProductComponent: React.FC = () => {
   const [characters, setCharacters] = useState<Character[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [favorites, setFavorites] = useState<number[]>([]);
+  const favorites = useStore((state) => state.favorites);
+  const setFavorites = useStore((state) => state.setFavorites);
+  const addFavorite = useStore((state) => state.addFavorite);
+  const removeFavorite = useStore((state) => state.removeFavorite);
   const searchTerm = useStore((state) => state.searchTerm);
 
   useEffect(() => {
+    const savedFavorites = localStorage.getItem('favorites');
+    if (savedFavorites) {
+      setFavorites(JSON.parse(savedFavorites));
+    }
+
     const fetchCharacters = async () => {
       try {
         const response = await axios.get('https://rickandmortyapi.com/api/character');
@@ -31,20 +39,20 @@ export const ProductComponent: React.FC = () => {
     };
 
     fetchCharacters();
-  }, []);
+  }, [setFavorites]);
 
   if (loading) return <Spinner />;
   if (error) return <p>{error}</p>;
 
   const toggleFavorite = (id: number) => {
     if (favorites.includes(id)) {
-      setFavorites(favorites.filter(favId => favId !== id));
+      removeFavorite(id);
     } else {
-      setFavorites([...favorites, id]);
+      addFavorite(id);
     }
   };
 
-  const filteredCharacters = characters.filter(character => 
+  const filteredCharacters = characters.filter(character =>
     character.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
