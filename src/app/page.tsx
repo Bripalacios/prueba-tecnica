@@ -1,5 +1,5 @@
-import { BuscadorComponent } from "@/components/BuscadorComponent";
-import { ProductComponent } from "@/components/ProductComponent";
+import { BuscadorComponent } from "@/app/components/BuscadorComponent";
+import { ProductComponent } from "@/app/components/ProductComponent";
 import Image from "next/image";
 
 export default function Home() {
